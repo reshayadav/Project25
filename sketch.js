@@ -40,7 +40,7 @@ function setup() {
 
 function draw() {
 
-  background(0);
+  background(100);
   Engine.update(myEngine);
 
   paper.display()

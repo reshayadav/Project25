@@ -6,8 +6,7 @@ class Paper{
             friction:0.5,
             density:1.2
       }
-      this.y=y;
-      this.x=x;
+   
       this.r=r;
       this.body = Bodies.circle(this.x,this.y,this.r,options);
       World.add(myWorld,this.body);
@@ -15,10 +14,10 @@ class Paper{
 
     }
     display(){
-        //var paperos = this.body.position;
+        var paperos = this.body.position;
       
-        imageMode(RADIUS);
-        image(this.image,100,200,20);
+        imageMode(CENTER);
+        image(this.image,paperos.x,paperos.y,2*this.r,2*this.r);
        
         
     }
