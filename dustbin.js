@@ -8,13 +8,13 @@ class Dustbin{
         this.width=w;
         this.height=h;
         World.add(myWorld,this.body);
+        this.image = loadImage("dustbin.png");
 
     }
     display(){
         var pos= this.body.position;
-        rectMode(CENTER);
-        fill (255,255,255);
-        rect(pos.x,pos.y,this.width,this.height);
+        imageMode(CENTER);
+        image(pos.x,pos.y,this.width,this.height);
 
 
     }
