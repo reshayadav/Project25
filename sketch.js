@@ -4,7 +4,7 @@ const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 var board1,board2,board3;
-
+var dustbin,dustbinImg;
 var paper;
 var ground;
 var myEngine,myWorld;
@@ -12,7 +12,7 @@ var myEngine,myWorld;
 function preload()
 {
 
-	//dustbinImg = loadImage("dustbin.png");
+	dustbinImg = loadImage("dustbin.png");
 	
 	
 }
@@ -25,11 +25,11 @@ function setup() {
 	myWorld = myEngine.world;
 
 
-	//image(dustbinImg,550,535,200,30);
+	image(dustbinImg,470,555,210,30);
 
 	//Create the Bodies Here.
 	paper = new Paper(100,200,10);
-	board1 =new Dustbin(550,555,200,30);
+	dustbin =new Dustbin(570,555,200,30);
 	board2 =new Dustbin(455,530,20,100);
 	board3 =new Dustbin(650,530,20,100);
 	ground =new Ground(400,580,800,20);
@@ -42,12 +42,13 @@ function setup() {
 
 function draw() {
 
-  background(450);
+  background(100);
   Engine.update(myEngine);
 
   paper.display();
   ground.display();
-  board1.display();
+  dustbin.display();
+
  // board2.display();
  // board3.display();
 
@@ -60,7 +61,7 @@ function draw() {
 function keyPressed(){
 	if(keyCode === UP_ARROW){
 
-		Matter.Body.applyForce(paper.body,paper.body.position,{x:30,y:-30});
+		Matter.Body.applyForce(paper.body,paper.body.position,{x:13,y:-13});
 
 	}
 }

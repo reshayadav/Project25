@@ -11,7 +11,6 @@ class Paper{
       this.body = Bodies.circle(x,y,r,options);
       World.add(myWorld,this.body);
       this.image= loadImage("paper.png");
-      this.image.scale = 0.4;
 
     }
     display(){
