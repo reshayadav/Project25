@@ -25,13 +25,12 @@ function setup() {
 	myWorld = myEngine.world;
 
 
-	image(dustbinImg,470,555,210,30);
 
 	//Create the Bodies Here.
 	paper = new Paper(100,200,10);
-	dustbin =new Dustbin(570,555,200,30);
-	board2 =new Dustbin(455,530,20,100);
-	board3 =new Dustbin(650,530,20,100);
+	dustbin =new Dustbin(570,555,130,20);
+	board2 =new Dustbin(520,530,20,130);
+	board3 =new Dustbin(640,530,20,100);
 	ground =new Ground(400,580,800,20);
 
 
@@ -45,12 +44,15 @@ function draw() {
   background(100);
   Engine.update(myEngine);
 
+
+
   paper.display();
   ground.display();
-  dustbin.display();
+  image(dustbinImg,570,505,130,130);
 
- // board2.display();
- // board3.display();
+  //board2.display();
+  //board3.display();
+  //dustbin.display();
 
  
   
@@ -61,7 +63,7 @@ function draw() {
 function keyPressed(){
 	if(keyCode === UP_ARROW){
 
-		Matter.Body.applyForce(paper.body,paper.body.position,{x:13,y:-13});
+		Matter.Body.applyForce(paper.body,paper.body.position,{x:14,y:-14});
 
 	}
 }
