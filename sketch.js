@@ -41,7 +41,7 @@ function setup() {
 
 function draw() {
 
-  background(100);
+  background(200);
   Engine.update(myEngine);
 
 
@@ -54,8 +54,8 @@ function draw() {
   //board3.display();
   //dustbin.display();
 
- 
-  
+ fill("black");
+ text("Press the up arrow key to start",300,50);
  
 }
 
